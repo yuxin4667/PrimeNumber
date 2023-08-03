@@ -1,79 +1,79 @@
 import java.util.*;
 public class JudgePrimeNumber {
 
-	public static int OddOrEvenNum(int n)//§PÂ_©_/°¸¼Æ
+	public static int OddOrEvenNum(int n)//åˆ¤æ–·å¥‡/å¶æ•¸
 	{
 		if(n%2==0)
 		{
-			System.out.println(n+"¬O°¸¼Æ");
+			System.out.println(n+"æ˜¯å¶æ•¸");
 			return 0;
 		}
 		else
 		{
-			System.out.println(n+"¬O©_¼Æ");
+			System.out.println(n+"æ˜¯å¥‡æ•¸");
 			return 1;
 		}
 	}
 	
-	public static int PrimeNum(int n)//§PÂ_¬O§_¬°½è¼Æ
+	public static int PrimeNum(int n)//åˆ¤æ–·æ˜¯å¦ç‚ºè³ªæ•¸
 	{
-		//­YN¬°>=2ªº°¸¼Æ«h¥²¤£¬O½è¼Æ
+		//è‹¥Nç‚º>=2çš„å¶æ•¸å‰‡å¿…ä¸æ˜¯è³ªæ•¸
 		if(OddOrEvenNum(n)==0 && n!=2)
 		{
-			System.out.println(n+"¤£¬O½è¼Æ");
+			System.out.println(n+"ä¸æ˜¯è³ªæ•¸");
 			return 0;
 		}
 		
-		//±q3¶}©l§PÂ_¬O§_¥i³Qn¾ã°£(¤w¥h°£©Ò¦³°¸¼Æ)
+		//å¾3é–‹å§‹åˆ¤æ–·æ˜¯å¦å¯è¢«næ•´é™¤(å·²å»é™¤æ‰€æœ‰å¶æ•¸)
 		int i=3;
-		while(i<=Math.sqrt(n))//i¥u»İ§PÂ_¦Ü®Ú¸¹N
+		while(i<=Math.sqrt(n))//iåªéœ€åˆ¤æ–·è‡³æ ¹è™ŸN
 		{
 			if(n%i==0)
 			{
-				System.out.println(n+"¤£¬O½è¼Æ");
+				System.out.println(n+"ä¸æ˜¯è³ªæ•¸");
 				return 0;
 			}
 			i+=2;
 		}
-		System.out.println(n+"¬O½è¼Æ");
+		System.out.println(n+"æ˜¯è³ªæ•¸");
 		return 1;
 	}
 	
-	public static void DeficientNum(int n)//§PÂ_§¹¬ü¼Æ/Á«¼Æ/¬Õ¼Æ
+	public static void DeficientNum(int n)//åˆ¤æ–·å®Œç¾æ•¸/è™§æ•¸/ç›ˆæ•¸
 	{
 		int sum=1;
-		//for°j°é²Ö¥[©Ò¦³¦]¼Æ
+		//forè¿´åœˆç´¯åŠ æ‰€æœ‰å› æ•¸
 		for(int i=2;i<=Math.sqrt(n);i++)
 		{
-			//§PÂ_¦]¼Æ¦³­ş¨Ç
+			//åˆ¤æ–·å› æ•¸æœ‰å“ªäº›
 			if(n%i==0)
 			{
 				sum+=i;
-				//N¤£¬O§¹¥ş¥­¤è¼Æªº±¡ªp
+				//Nä¸æ˜¯å®Œå…¨å¹³æ–¹æ•¸çš„æƒ…æ³
 				if(i!=(n/i))
 				{
 					sum+=(n/i);
 				}
 			}
 		}
-		//§PÂ_§¹¬ü¼Æ/Á«¼Æ/¬Õ¼Æ
+		//åˆ¤æ–·å®Œç¾æ•¸/è™§æ•¸/ç›ˆæ•¸
 		if(sum<n)
-			System.out.println(n+"¬OÁ«¼Æ");
+			System.out.println(n+"æ˜¯è™§æ•¸");
 		else if(sum==n)
-			System.out.println(n+"¬O§¹¬ü¼Æ");
+			System.out.println(n+"æ˜¯å®Œç¾æ•¸");
 		else
-			System.out.println(n+"¬O¬Õ¼Æ");
+			System.out.println(n+"æ˜¯ç›ˆæ•¸");
 	}
 	
-	public static void PrimeFactorization(int n, int f)//¶i¦æ½è¦]¼Æ¤À¸Ñ
+	public static void PrimeFactorization(int n, int f)//é€²è¡Œè³ªå› æ•¸åˆ†è§£
 	{
 		System.out.print(n+" = ");
-		//¥ı§PÂ_¬O§_¬°½è¼Æ¡A­YN¬°½è¼Æ«hª½±µ¦L¥X
+		//å…ˆåˆ¤æ–·æ˜¯å¦ç‚ºè³ªæ•¸ï¼Œè‹¥Nç‚ºè³ªæ•¸å‰‡ç›´æ¥å°å‡º
 		if(f==1)
 			System.out.print(n);
 		else
 		{
-			//¶i¦æ½è¦]¼Æ¤À¸Ñ
+			//é€²è¡Œè³ªå› æ•¸åˆ†è§£
 			int i=2;
 			while(n>1)
 			{
@@ -94,19 +94,19 @@ public class JudgePrimeNumber {
 	{
 		Scanner sc=new Scanner(System.in);
 		int input, num;
-		//do while°j°é»s§@¿ï³æ
+		//do whileè¿´åœˆè£½ä½œé¸å–®
 		do 
 		{
-			System.out.print("½Ğ°İ±z·Q­n1.§PÂ_¼Æ¦r 2.Â÷¶}: ");
+			System.out.print("è«‹å•æ‚¨æƒ³è¦1.åˆ¤æ–·æ•¸å­— 2.é›¢é–‹: ");
 			input=sc.nextInt();
 			if(input==1) 
 			{
-				System.out.print("½Ğ¿é¤J¼Æ­È2~n¤§¶¡ªº¼Æ: ");
+				System.out.print("è«‹è¼¸å…¥æ•¸å€¼2~nä¹‹é–“çš„æ•¸: ");
 				num=sc.nextInt();
-				//±Æ°£¿é¤J¿ù»~
+				//æ’é™¤è¼¸å…¥éŒ¯èª¤
 				while(num<=1)
 				{
-					System.out.print("®æ¦¡¤£²Å¡A½Ğ¿é¤J¼Æ­È2~n¤§¶¡ªº¼Æ: ");
+					System.out.print("æ ¼å¼ä¸ç¬¦ï¼Œè«‹è¼¸å…¥æ•¸å€¼2~nä¹‹é–“çš„æ•¸: ");
 					num=sc.nextInt();
 				}
 				int f=PrimeNum(num);
